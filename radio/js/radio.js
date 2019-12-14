@@ -1,14 +1,17 @@
 window.onload = function() {
     var count = 0;
 
+    // Mostrar els dos cercles simulant els altaveus
     mostrarInici();
     cambiarNumero(count);
 
     document.getElementById('adelante').onclick = function () {
+        // Següent diapositiva
         count = animacionDelante(count);
     }
 
     document.getElementById('atras').onclick = function () {
+        // Anterior diapositiva
         count = anmacionAtras(count);
     }
 
@@ -20,6 +23,7 @@ function animacionDelante(count) {
 
     count ++;
 
+    // Moure la linea verda per mostrar per quina diapo va l'usuari
     if (count == 1) {
         valor = currentLeft + 6.5 + "vh";
     }
@@ -33,12 +37,13 @@ function animacionDelante(count) {
 
     document.getElementsByClassName("vl")[0].style.left = valor;
 
+    // Mostrar el pdf corresponent
     mostrarPDF(count);
 
+    // Canviar el número de la diapo per la que vas
     cambiarNumero(count);
 
     return count;
-
 }
 
 function anmacionAtras(count) {

@@ -18,7 +18,8 @@ window.onload = function() {
   //Seleccionamos la tabla
   let table = document.querySelector("table");
   //Indicamos los valores que tiene las cookies nuestro caso Nom,Valor
-  let data = Object.keys(todasCookies[0]);
+  let data =["Posicio","Nombre","Puntuació"];
+  //let data =Object.keys(todasCookies[0]);
   generateTable(table, todasCookies);
   generateTableHead(table, data);
 };
@@ -33,14 +34,23 @@ function generateTableHead(table, data) {
     row.appendChild(th);
   }
 }
-
+var clicks=1;
 //Genera la tabla
 function generateTable(table, data) {
-  for (let element of data) {
+  for (element of data) {
     let row = table.insertRow();
     for (key in element) {
       let cell = row.insertCell();
+    
       let text = document.createTextNode(element[key]);
+      if(text.data==0){
+        text= document.createTextNode(clicks);
+        clicks=clicks+1;
+      }
+      else{
+        
+      }
+      console.log(element);
       cell.appendChild(text);
     }
   }

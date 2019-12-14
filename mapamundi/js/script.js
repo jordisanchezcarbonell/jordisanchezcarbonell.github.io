@@ -43,7 +43,7 @@ imageSeries.id = "markers";
 var imageSeriesTemplate = imageSeries.mapImages.template;
 
 var circle = imageSeriesTemplate.createChild(am4core.Circle);
-circle.radius = 10;
+circle.radius = 12;
 circle.fill = am4core.color("#000000");
 circle.stroke = am4core.color("#FFFFFF");
 circle.strokeWidth = 2;

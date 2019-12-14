@@ -1,30 +1,29 @@
-var temp="";
-
 window.onload=function(){
 	$('#explicacioJoc').modal("show");
 
 	canvidePuzzle();
 
-	//esperar a que es tanqui el modal per iniciar el joc
+	// Esperar a que es tanqui el modal per iniciar el joc
 	$('#explicacioJoc').on('hidden.bs.modal', function (e) {
 		
 		updateClock();
-		//inici del joc
+		
+		// Inici del joc
 		setTimeout(() => {
 			starGame();
 		}, 1000);
 	})
-	temp = getCookie();
+	
 }
 
 // Agafar totes les peces
 const tiles = Array.from(document.querySelectorAll(".tile"));
 const emptyTile = document.querySelector(".tile--empty");
 
-var totalTime=5;
-var puntuacion=0;
+var totalTime = 120;
+var puntuacion = 0;
 
-//Random img
+// Random img
 var imgArr = ['./img/recep_1.jpg','./img/recep_2.jpg', './img/recep_3.jpg', './img/recep_4.jpg'];
 var selectBG;
 
@@ -86,29 +85,29 @@ const areaKeys = {
 // Afegir event click a les peces
 tiles.map(tile => {
 	tile.addEventListener("click", event => {
-		// agafar l'area on es troben les peces que es canviaran
+		// Agafar l'area on es troben les peces que es canviaran
 		const tileArea = tile.style.getPropertyValue("--area");
 		const emptyTileArea = emptyTile.style.getPropertyValue("--area");
 
-		// canviar la peça seleccionada per la predefinida
+		// Canviar la peça seleccionada per la predefinida
 		emptyTile.style.setProperty("--area", tileArea);
 		tile.style.setProperty("--area", emptyTileArea);
 
-		// comprovar si s'ha completat el puzzle
+		// Comprovar si s'ha completat el puzzle
 		isComplete(tiles);
 	});
 });
 
 const isComplete = tiles => {
 	
-	// observar la posicio de cada peça
+	// Observar la posicio de cada peça
 	const currentTilesString = tiles
 		.map(tile => tile.style.getPropertyValue("--area").trim())
 		.toString();
 
-	// comparar la posicio de les peces amb la posicio correcta
+	// Comparar la posicio de les peces amb la posicio correcta
 	if (currentTilesString == Object.keys(areaKeys).toString()) {
-		//alert("You Win");
+		
 		document.getElementById("correcte").style.display="block";
 		var index = imgArr.indexOf(selectBG);
 		if (index > -1) {
@@ -127,42 +126,46 @@ const isComplete = tiles => {
 	}
 };
 
-//barrejar posicions
+// Barrejar posicions
 const shuffledKeys = keys => Object.keys(keys).sort(() => .5 - Math.random());
 
 function starGame(){
 	// Begin with our in order area keys
 	let startingAreas = Object.keys(areaKeys);
 	startingAreas = shuffledKeys(areaKeys);
+	
 	// Apply shuffled areas
 	tiles.map((tile, index) => {
 		tile.style.setProperty("--area", startingAreas[index]);
 	});
 }
 
-//conta enrera
+// Compte enrere
 function updateClock(){
 	
 	document.getElementById('countdown').innerHTML = totalTime;
-  	if(totalTime==0){
+  	if (totalTime == 0) {
 		finalJuego();
-		//alert("Final");
-	  }
-	  else if(puntuacion===20){
+	}
+	else if (puntuacion === 20) {
 		totalTime=totalTime;
-	  }else{
-    	totalTime-=1;
-    	setTimeout("updateClock()",1000);
-  }
+	}
+	else {
+		totalTime -= 1;
+		setTimeout("updateClock()",1000);
+  	}
 }
 
+var temp = getCookie();
 
+if (temp != null) {
+	console.log(temp[0].name+temp[0].idcard);
+}
 
-function finalJuego(){
+function finalJuego() {
 	$('#modalFinal').modal("show");
-	document.getElementById("score").innerHTML="9";
+
 	temp[0].idcard = temp[0].idcard + parseInt(document.getElementById("score").innerHTML);
+
 	setCookie(temp[0].name,temp[0].idcard,365);
-
 }
-

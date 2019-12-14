@@ -1,5 +1,4 @@
 body {
-  background-color: #F5F5F5;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -26,9 +25,8 @@ header {
 
 #title_mapa {
   display: flex;
-  font-size: 8vh;
+  font-size: 7vh;
   color: white;
-  font-weight: bold;
 }
 
 #lenguas {

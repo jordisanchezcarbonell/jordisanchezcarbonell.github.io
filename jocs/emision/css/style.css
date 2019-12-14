@@ -29,11 +29,7 @@ canvas {
   display: block;
   margin: 100px auto 0px;
   display: block;
-
-  /*background: #e8eaf6;
-  border-radius: 5em;
-  */
-  border: solid 10px #C00000;
+  border: solid 10px #B90000;
 
 }
 
@@ -63,7 +59,6 @@ header {
   font-size: 7vh;
   margin-left: 4vh;
   color: white;
-  font-weight: bold;
 }
 
 #lenguas {
@@ -200,7 +195,7 @@ footer {
   font-size: 2.2vh;
   margin-left: 2vh;
   font-weight: bold;
-  color: #C00000;
+  color: #B90000;
 
 }
 

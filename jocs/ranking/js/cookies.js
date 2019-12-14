@@ -9,23 +9,7 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-//Funcion para obtener la cookie
-/*
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(";");
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == " ") {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-*/
+
 //Comprobar si existe la cookie.
 function checkCookie() {
   var user = getCookie(user);
@@ -77,13 +61,23 @@ function ReadCookie() {
   return arrayCookies;
 }
 
+function cookiesPrueba(id,Nom, Valor) {
+  this.id=id;
+  this.Nom = Nom;
+  this.Valor = Valor;
+}
 function mostrar() {
   var array = getCookie();
-  var byDate = array.slice(0);
+  var segundoarray=[];
+  for(var i =0;i<=5;i++){
+    segundoarray.push(new cookiesPrueba(0,array[i].name,array[i].idcard));
+  }
+  console.log(segundoarray.idcard);
+  var byDate = segundoarray.slice(1);
 
-  byDate.sort(function(a, b) {
-    return parseInt(b.idcard) - parseInt(a.idcard);
-  });
+    byDate.sort(function(a, b) {
+      return parseInt(b.Valor) - parseInt(a.Valor);
+    });
 
   return byDate;
 }

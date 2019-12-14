@@ -16,31 +16,39 @@ var v_paraulesEndevinades = [];
 var puntuacio = 0;
 var vegades = 0;
 var result = false;
+var temp = "";
 
-var temp="";
 window.onload = function() {
     var v_key = [];
 
     temp = getCookie();
+
     // Ensenyar modal: explicacio del joc
     $('#explicacioJoc').modal("show");
+
     if(temp!=null){
         console.log(temp[0].name+temp[0].idcard);
     }
+
     // Agafar els noms de v_paraules
     for(var key in v_paraules) {
         v_key.push(key);
     }
+
+    // Escollir de forma aleatorio una paraula
     var paraulaEscollida = paraulaRandom(v_key);
 
+    // Obtenir el codi morse de la paraula escollida aleatoriament
     var morseParaula = morseParaulaEscollida(v_key, paraulaEscollida);
 
+    // Mostrarla per pantalla
     omplirBoxMorse(v_key, paraulaEscollida, morseParaula);
 
     // Quan prem els botons
     document.getElementById('morse1').onclick = function () {
         var boxMorse = document.getElementById('morse1');
         
+        // Comprovar si es correcte
         paraulaEscollida = comprovarMorse(v_key, boxMorse, paraulaEscollida, morseParaula);
     }
 
@@ -73,6 +81,7 @@ function paraulaRandom(v_key) {
     return random;
 }
 
+// Separar les lletres de la paraula random (obtenir una millor lectura de la paraula)
 function separarLletres(random) {
     var v_lletres;
     var v_nou = [];
@@ -160,12 +169,14 @@ function comprovarMorse(v_key, boxMorse, paraula, morseParaula) {
     calcularResultat();
 
     if (result) {
+        // Color verd + escollir una nova paraula
         boxMorse.style.backgroundColor = "#57B053";
 
         paraula = paraulaRandom(v_key);
         morseParaula = morseParaulaEscollida(v_key, paraula);
         omplirBoxMorse(v_key, paraula, morseParaula);
 
+        // Animació per tornar a posar el color per defecte i mirar si ja finalitza el joc
         setTimeout( function () {
             document.getElementById('morse1').style.backgroundColor = "#C00000";
             document.getElementById('morse2').style.backgroundColor = "#C00000";
@@ -203,8 +214,8 @@ function calcularResultat() {
 function endGame() {
     // Ensenyar modal: final del joc
     $('#modalFinal').modal("show");
-    temp[0].idcard = temp[0].idcard + parseInt(document.getElementById("score").innerHTML);
-    setCookie(temp[0].name,temp[0].idcard,365);
 
-    console.log(temp[0].idcard);
+    temp[0].idcard = temp[0].idcard + parseInt(document.getElementById("score").innerHTML);
+
+    setCookie(temp[0].name,temp[0].idcard,365);
 }

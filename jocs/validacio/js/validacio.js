@@ -1,17 +1,9 @@
 var vegades = 0;
 var puntuacio = 0;
 var result = false;
-var temp="";
+var temp = "";
 
 window.onload = function() {
-
-    // Ensenyar modal: explicacio del joc
-    $('#explicacioJoc').modal("show");
-    temp = getCookie();
-    // Ensenyar modal: explicacio del joc
-    if(temp!=null){
-        console.log(temp[0].name+temp[0].idcard);
-    }
     var v_paraules = [
         ["Micròfon", "Ones sonores", "Espectre electromagnètic"],
         ["Antena", "Amplificador modulador", "Modulació", "Membrana de plàstic", "Transmissor", "Procesador d'audio", "Excitament", "Preamplificador d'autofreqüència", "Ones portadores", "AM i FM"],
@@ -22,18 +14,29 @@ window.onload = function() {
     var v_transmissio = v_paraules[1];
     var v_receptor = v_paraules[2];
 
-    var v_paraulesJuntes = juntarParaules(v_paraules);
+    // Ensenyar modal: explicacio del joc
+    $('#explicacioJoc').modal("show");
+    
+    temp = getCookie();
 
+    // Ensenyar modal: explicacio del joc
+    if(temp!=null){
+        console.log(temp[0].name+temp[0].idcard);
+    }
+
+    var v_paraulesJuntes = juntarParaules(v_paraules);
     var paraulaEscollida = paraulaRandom(v_paraulesJuntes);
     calcularResultat(result);
 
     document.getElementById('boxEmissio').onclick = function () {
         var boxEmissio = document.getElementById('boxEmissio');
 
+        // Mirar si l'opció es la correcte
         result = comprovarEmissio(paraulaEscollida, v_emissio);
         calcularResultat(result);
 
         if (result) {
+            // Com es correcte, canviar el color a ver i buscar una nova paraula
             boxEmissio.style.backgroundColor = "#57B053";
 
             v_paraulesJuntes = paraulaRepetida(v_paraulesJuntes, paraulaEscollida);
@@ -101,6 +104,7 @@ function juntarParaules(v_paraules) {
     return v_total;
 }
 
+// Buscar una nova paraula random
 function paraulaRandom(v_paraules) {
     var random = null;
     
@@ -150,6 +154,7 @@ function comprovarReceptor(paraulaEscollida, v_receptor) {
     return result;
 }
 
+// Eliminar la paraula ja sortida de l'array
 function paraulaRepetida(v_paraulesJuntes, paraulaEscollida) {
     var i = v_paraulesJuntes.indexOf(paraulaEscollida);
     v_paraulesJuntes.splice(i, 1);
@@ -195,7 +200,8 @@ function calcularResultat(result) {
 function endGame() {
     // Ensenyar modal: final del joc
     $('#modalFinal').modal("show");
+
     temp[0].idcard = temp[0].idcard + parseInt(document.getElementById("score").innerHTML);
-	console.log(temp[0].idcard);
+    
 	setCookie(temp[0].name,temp[0].idcard,365);
 }

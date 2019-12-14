@@ -73,7 +73,7 @@ header {
 	margin-top: -10vh;
 }
 .answer_div{
-	background-color:#C00000; 
+	background-color:#B90000; 
 	width: 30vh;
 	border-radius: 3vh;
 	padding: 2vh;
@@ -83,7 +83,7 @@ header {
 	float: left;
 }
 .puzzle {
-	background-color:#C00000; 
+	background-color:#B90000; 
 	width: 65vh;
 	border-radius: 3vh;
 	padding: 2vh;
@@ -95,7 +95,7 @@ header {
 	float: left;
 }
 .countdown_div{
-	background-color:#C00000; 
+	background-color:#B90000; 
 	width: 20vh;
 	border-radius: 3vh;
 	padding: 2vh;
@@ -127,7 +127,7 @@ header {
 		"A B C"
 		"D E F"
 		"G H I";
-	background:#C00000;
+	background:#B90000;
 }
 
 .tile, #answer {
