@@ -94,7 +94,7 @@ $(document).ready(function () {
 
   // Evento para whastapp
   $('#wpp').on('click', function(){
-    window.open("https://api.whatsapp.com/send?phone=34676564769&text=Estoy%20interesado%20in%20en%20tu%20portfolio");
+    window.open("https://api.whatsapp.com/send?phone=34676564769&text=Estoy%20interesado%20in%20en%20tu%20portfolio :)");
   })
 
   // modal
