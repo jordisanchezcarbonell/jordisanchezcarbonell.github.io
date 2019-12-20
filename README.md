@@ -1,4 +1,4 @@
-# Estrella Benites
+# Jordi Sánchez Carbonell
 
 I'm a Front-end developer who loves makes tech projects and keep learning new technologies.
 My portfolio will show you a little bit what I can do.
