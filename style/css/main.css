@@ -282,7 +282,9 @@ canvas {
           color: #808080; }
       #my-contact-info .contact-info-container .contact-box-main .whatsapp {
         width: 35%; }
-
+        .whatsapp-icon:hover{
+          cursor: pointer;
+        }
 /* FOOTER */
 footer {
   background-color: #000;
