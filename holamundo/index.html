@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <h1>Jordi Sanchez Carbonell</h1>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <p>{{better}}</p>
+        <p>{{arrays}}</p>
+        <p v-for="array of arrays">{{array}}</p>
+        <input type="text" v-model="NuevoEventos" @keyup.enter="agregarEvento"> 
+        <input type="text" v-model="Cantidad">
+        <button v-on:click="agregarEvento">ADD</button>
+
+        <p v-for="obejctosconveu of nombresEventos">{{obejctosconveu.nombre}}- Su edad es: {{obejctosconveu.edad}}
+           <button @click=obejctosconveu.edad=obejctosconveu.edad+1>+</button>
+            <span v-if="obejctosconveu.edad <18">Menor de edad</span>
+
+
+        </p>
+        <h2> tola: {{sumatotal}}</h2>
+    </div>
+</body>
+<script src="js/script.js"></script>
+
+</html>
