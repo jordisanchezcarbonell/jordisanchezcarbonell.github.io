@@ -49,7 +49,7 @@ function funcio() {
         setCookie(user, 0, 365);
       }
     */
-    if(user.length <3){
+    if(user.length <3 || user.toUpperCase() === "XXX" || user.toUpperCase() === "SEX" || user.toUpperCase() === ".l." || user.toUpperCase() === "S3X"){
        // $("#explicacioJoc").modal('hide');
 
        location.reload();

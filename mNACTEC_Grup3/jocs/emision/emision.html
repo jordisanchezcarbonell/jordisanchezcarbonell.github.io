@@ -17,37 +17,23 @@
   </head>
   <body>
     <header>
-      <img
-        src="../../assets/back.png"
-        id="img_back"
-        onclick="location.href='../../quiosc/quiosc.html';"
-        width="7%"
-      />
+      <img src="../../assets/back.png" id="img_back" onclick="location.href='../../quiosc/quiosc.html';">
 
-      <div id="box_title_joc">
-        <h1 class="text-center p-2" id="title_joc">
-          Quins elements són d'emissió
-        </h1>
+      <div id="box_title">
+          <h1 class="text-right" id="title_joc">Endevina a on pertany!</h1>
+          <h1 class="text-left" id="title_tipus">Validació</h1>
       </div>
+      
+      <div id="lenguas"> 
+          <img class="bandera" src="../../assets/lenguas/bandera_catalan.png" alt="">
+          <img class="bandera" src="../../assets/lenguas/bandera_espanola.png" alt="">
+          <img class="bandera" src="../../assets/lenguas/bandera_english.png" alt="">
+      </div>
+  </header>
 
-      <div id="lenguas">
-        <img
-          class="bandera"
-          src="../../assets/lenguas/bandera_catalan.png"
-          alt=""
-        />
-        <img
-          class="bandera"
-          src="../../assets/lenguas/bandera_espanola.png"
-          alt=""
-        />
-        <img
-          class="bandera"
-          src="../../assets/lenguas/bandera_english.png"
-          alt=""
-        />
-      </div>
-    </header>
+
+
+
     <!-- <button type="button" class="btn btn_exit" data-dismiss="modal"onclick="location.href='../ranking/vistas/users.php';" >Ranking</button> -->
 
     <!-- <div class="modal_micro">
@@ -179,8 +165,8 @@
           <div class="modal-footer">
             <form role="form" id="myForm">
               <div class="form-group">
-                  <label for="inputName">Introdueix Nom: </label>
-                  <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Enter your name"/>
+                  <p class="colorNombre" for="inputName">Introdueix Nom: </p>
+                  <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Introdueix tres lletres"/>
               </div>
               
           </form>

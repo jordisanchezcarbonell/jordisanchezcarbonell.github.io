@@ -1,8 +1,11 @@
+var resultatAnterior=0;
+
 window.onload=function(){
 	$('#explicacioJoc').modal("show");
 
 	canvidePuzzle();
-
+	resultatAnterior=this.parseInt(temp[0].idcard );
+	document.getElementById("score").innerHTML= resultatAnterior;
 	// Esperar a que es tanqui el modal per iniciar el joc
 	$('#explicacioJoc').on('hidden.bs.modal', function (e) {
 		
@@ -113,8 +116,8 @@ const isComplete = tiles => {
 		if (index > -1) {
 			imgArr.splice(index, 1);
 		}
-		document.getElementById('score').innerHTML = puntuacion+=5;
-		if(puntuacion===20){
+		document.getElementById('score').innerHTML = temp[0].idcard+=5;
+		if(temp[0].idcard===80){
 			finalJuego();
 		}
 		setTimeout(() => {

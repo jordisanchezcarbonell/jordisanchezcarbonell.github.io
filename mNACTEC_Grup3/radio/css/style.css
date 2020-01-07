@@ -51,7 +51,6 @@ header {
 #radio {
   width: 170vh;
   height: 80vh;
-  /* background-color: #171717; */
   background-color: #24150F;
   margin: auto;
   position: relative;
@@ -75,7 +74,6 @@ header {
   bottom: 0;
   right: 0;
   border-radius: 14vh 14vh / 22vh 22vh;
-  /* border-radius: 7% 7% 16% 18%/60% 60% 90% 100%; */
 }
 
 #radio .inner-box .top-section {
@@ -90,18 +88,10 @@ header {
           box-shadow: 0px 4px 9px 3px rgba(27, 27, 27, 0.52) inset;
 }
 
-/* .circles {
-  width: 38%;
-  height: 88%;
-  background-color: rgba(51, 51, 51, 0.23);
-  float: left;
-  border-radius: 150px;
-  margin: 11px 28px;
-  border: 2px solid rgba(51, 51, 51, 0.06);
-  -webkit-box-shadow: inset 0 0 12px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: inset 0 0 12px 0px rgba(0, 0, 0, 0.3);
-  opacity: 0.2;
-} */
+#presentacions {
+  display: flex;
+  flex-direction: column;
+}
 
 #radio .inner-box .top-section #iniciPresentacio .circles {
   width: 50vh;

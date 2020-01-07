@@ -55,11 +55,16 @@ function anmacionAtras(count) {
         var currentLeft = parseInt(document.getElementsByClassName("vl")[0].style.left) || 27;
         var valor = currentLeft;
     
-        if (count === 2) {
-            valor = currentLeft - 6.5 + "vh";
-        }
-        else if (count >= 1 && count <= 10) {
-            valor = currentLeft - 7.5 + "vh";
+        if (count >= 1 && count <= 10) {
+            if (count == 1) {
+                valor = currentLeft - 6.5 + "vh";
+            }
+            else if (count >= 2 && count <= 3) {
+                valor = currentLeft - 7 + "vh";
+            }
+            else {
+                valor = currentLeft - 7.5 + "vh";
+            }
         }
         else {
             valor = 27 + "vh";
@@ -78,14 +83,14 @@ function anmacionAtras(count) {
 
 function mostrarPDF(count) {
     var imgURL = ""
-    var divPresentacio = document.getElementById("presentacio");
+    var divPresentacio = document.getElementById("presentacioA");
 
     if (count > 0) {
         imgURL = "./img/pdf/pp_" + count + ".jpg";       
         divPresentacio.className = "imgPresentacio";
         divPresentacio.style.backgroundImage = "url(" + imgURL + ")";
         divPresentacio.style.backgroundRepeat = "no-repeat";
-        divPresentacio.style.backgroundPosition = "center";
+        // divPresentacio.style.backgroundPosition = "center";
         divPresentacio.style.backgroundSize = 52 + "%";
     }
     else {
@@ -95,13 +100,13 @@ function mostrarPDF(count) {
 }
 
 function mostrarInici() {
-    var divCircle = document.getElementById("iniciPresentacio");
+    // var divCircle = document.getElementById("iniciPresentacio");
     
-    for (var i=0; i<2; i++) {
-        var circle = document.createElement('div');
-        circle.setAttribute('class', 'circles');
-        divCircle.appendChild(circle);
-    }
+    // for (var i=0; i<2; i++) {
+    //     var circle = document.createElement('div');
+    //     circle.setAttribute('class', 'circles');
+    //     divCircle.appendChild(circle);
+    // }
 }
 
 function cambiarNumero(count) {

@@ -199,7 +199,7 @@ const destructCorrect = Bola => {
   console.log(updatedBolasCorrect);
   BolasCorrect = updatedBolasCorrect;
 
-  updateScore(++score);
+  updateScore(score);
 
   console.log(updatedBolasCorrect);
   // console.log(BolasCorrect);
@@ -255,7 +255,7 @@ const destructIncorrect = Bola => {
     (items, index) => Bola !== index
   );
   BolasIncorrect = updatedBolasIncorrect;
-  updateScore(--score);
+  updateScore(score=-5);
 };
 
 canvas.addEventListener("mousedown", event => {

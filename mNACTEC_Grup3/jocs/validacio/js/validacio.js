@@ -14,9 +14,7 @@ window.onload = function() {
     var v_emissio = v_paraules[0];
     var v_transmissio = v_paraules[1];
     var v_receptor = v_paraules[2];
-    //Obtenemos el resultado anterior
-    resultatAnterior=this.parseInt(temp[0].idcard );
-
+   
     // Ensenyar modal: explicacio del joc
     $('#explicacioJoc').modal("show");
     
@@ -26,6 +24,7 @@ window.onload = function() {
     if(temp!=null){
         console.log(temp[0].name+temp[0].idcard);
     }
+    resultatAnterior=this.parseInt(temp[0].idcard);
     document.getElementById("score").innerHTML= resultatAnterior;
     var v_paraulesJuntes = juntarParaules(v_paraules);
     var paraulaEscollida = paraulaRandom(v_paraulesJuntes);
@@ -197,7 +196,7 @@ function calcularResultat(result) {
     }
 
     var score = document.getElementById("score");
-    score.innerHTML = puntuacio+resultatAnterior;
+    score.innerHTML = temp[0].idcard+puntuacio;
 }
 
 function endGame() {
