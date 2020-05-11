@@ -1,0 +1,35 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "predeploy": "ssh freaks cd /var/www/lena.portfolio/wp-content/themes/MyTheme && rm -rf css/ fonts/img/ js/",
+    "deploy": "scp -r dist/* freaks:/var/www/lena.portfolio/wp-content/themes/MyTheme/"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.5.1",
+    "vue": "^2.5.16",
+    "vue-axios": "^2.1.5",
+    "vue2-animate": "^2.0.0",
+    "whatwg-fetch": "^2.0.4"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/eslint-config-airbnb": "^3.0.0-beta.16",
+    "node-sass": "^4.14.0",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
