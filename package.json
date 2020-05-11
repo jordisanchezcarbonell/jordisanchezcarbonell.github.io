@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.js" ,
+
     "predeploy": "ssh freaks cd /var/www/lena.portfolio/wp-content/themes/MyTheme && rm -rf css/ fonts/img/ js/",
     "deploy": "scp -r dist/* freaks:/var/www/lena.portfolio/wp-content/themes/MyTheme/"
   },
