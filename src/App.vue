@@ -94,7 +94,7 @@ export default {
   },
 mounted () {
     axios
-      .get('http://apiproyecto-jordisanchez.herokuapp.com/api/products')
+      .get('https://apiproyecto-jordisanchez.herokuapp.com/api/products')
       .then(response => {
        this.posts=response.data
        console.log(this.posts)
